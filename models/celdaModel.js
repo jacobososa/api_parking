@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
 const CeldaSchema = new mongoose.Schema({
-    numeroCelda: { type: Number, unique: true, required: true },
-    estado: { type: String, enum: ['disponible', 'no disponible'], default: 'disponible' },
-    placaVehiculo: { type: String, maxlength: 6 },
-    fechaIngreso: { type: Date },
-    fechaSalida: { type: Date },
-    pin: { type: String }
+    numeroCelda: { type: Number, required: true },
+    estado: { type: String, required: true },
+    placaVehiculo: { type: String, default: '' },
+    fechaIngreso: { type: Date, default: null },
+    fechaSalida: { type: Date, default: null },
+    pin: { type: String, default: '' }
 });
 
 module.exports = mongoose.model('Celda', CeldaSchema);

@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 // Crear una nueva celda (POST)
 exports.crearCelda = async (req, res) => {
     try {
-        const { numeroCelda, estado } = req.body;
+        const { numeroCelda, estado, } = req.body;
         const nuevaCelda = new Celda({ numeroCelda, estado });
         await nuevaCelda.save();
         res.status(201).json(nuevaCelda);
